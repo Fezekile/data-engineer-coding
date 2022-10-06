@@ -1,8 +1,3 @@
-# senior-data-engineer-coding-interview
-
-In Git, please create a `feature/` branch, off of the `development` branch, using your name and surname as the branch name.
-
-Submit a pull request into the `development` branch once you're done coding.
 
 # Problem Statement
 
@@ -14,7 +9,6 @@ An Amazon Aurora cluster (postgres flavour) houses their Operational Data Store.
 
 Connection details are:
 mycluster.cluster-123456789012.us-east-1.rds.amazonaws.com
-(Please use the default postgres port to connect)
 username: `postgres`
 password: `5Y67bg#r#`
 
@@ -22,17 +16,16 @@ Given the following data model:
 
 ![](DataModel_ERD.png)
 
-# Perform the following tasks
+# Build Steps 
 
-1. Write code to deploy the following resources via Terraform:
+1. Deplyment via Terraform
 
-(Put this code in the file `Terraform/main.tf`)
 
 * A Glue Crawler to crawl this datasource
 * A Glue Catalog Database to persist the metadata
 * A Glue Job which will read data from this datasource and write it to S3
 * An S3 bucket to house the transformed dataset
-* Any other terraform resources you might require
+
 
 2. Write a Glue ETL script (use the file `Glue/etl.py`), containing scaleable business logic to calculate the moving average of loan amounts taken out over the last three months, per branch.
    1. Create a separate monthly output file for each bank in the group.
